@@ -20,7 +20,7 @@ public class Quiz : MonoBehaviour
     void Start()
     {
         DisplayQuestions();
-        
+         
     }
 
 
