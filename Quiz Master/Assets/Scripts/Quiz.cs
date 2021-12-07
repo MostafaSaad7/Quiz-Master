@@ -11,7 +11,7 @@ public class Quiz : MonoBehaviour
     [SerializeField] TextMeshProUGUI questionText;
     QuestionSO Currentquestion;
     [SerializeField] List<QuestionSO> questions=new List<QuestionSO>();
-
+    
     [Header("Answers")]
     [SerializeField] GameObject [] answersButtons;
     [SerializeField] int correctAnswerIndex;
