@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Where is Salah  playing?
   answers:
-  - Liver
-  - ss
-  - dd
-  - dasa
+  - Liverpool
+  - Realmadrid
+  - Astonvilla
+  - Everton
   correctAnswerIndex: 0

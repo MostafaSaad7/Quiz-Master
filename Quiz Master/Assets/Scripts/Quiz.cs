@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Quiz : MonoBehaviour
     {
 
-        [Header("Questions")]
+    [Header("Questions")]
     [SerializeField] TextMeshProUGUI questionText;
     QuestionSO Currentquestion;
     [SerializeField] List<QuestionSO> questions=new List<QuestionSO>();
@@ -25,9 +25,14 @@ public class Quiz : MonoBehaviour
     [SerializeField] Image TimerImage;
     Timer timer;
 
+
+    [Header("Scoring")]
+    [SerializeField] TextMeshProUGUI scoreText;
+    ScoreKeeper scoreKeeper;
     void Start()
     {
         timer =FindObjectOfType<Timer>();
+        scoreKeeper=FindObjectOfType<ScoreKeeper>();
          
     }
 
@@ -60,6 +65,8 @@ public class Quiz : MonoBehaviour
         DisplayAnswer(index);
         setButtonState(false);
         timer.cancleTimer();
+        scoreText.text="Score: "+scoreKeeper.CalculateScore()+"%";
+
 
     }
 
@@ -71,7 +78,7 @@ public class Quiz : MonoBehaviour
             questionText.text="Correct!!";
             Image buttonImage = answersButtons[index].GetComponent<Image>();
             buttonImage.sprite=correctAnswerSprite;
-
+            scoreKeeper.IncreamentCorrectAnswer();
 
         }
 
@@ -114,10 +121,11 @@ public class Quiz : MonoBehaviour
     {   
         if(questions.Count>0)
         {
-        setButtonState(true);
-        setDefaultButtonSprites();
-        GetRandomQuestion();
-        DisplayQuestions();
+            setButtonState(true);
+            setDefaultButtonSprites();
+            GetRandomQuestion();
+            DisplayQuestions();
+            scoreKeeper.IncreamentQuestionsSeen();
     }
     }
 
@@ -129,7 +137,7 @@ public class Quiz : MonoBehaviour
         Currentquestion=questions[index];
 
         if(questions.Contains(Currentquestion))
-        questions.Remove(Currentquestion);
+            questions.Remove(Currentquestion);
     }
     void setButtonState(bool state) 
     {
