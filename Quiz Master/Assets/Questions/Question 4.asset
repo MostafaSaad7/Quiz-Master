@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question 4
   m_EditorClassIdentifier: 
   question: Where is Ramos playing?
+  answers:
+  - wwwwwww
+  - eeeeeeeeee
+  - sssssss
+  - zzzzzzz
+  correctAnswerIndex: 2

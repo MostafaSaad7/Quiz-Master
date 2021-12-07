@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-   [SerializeField] float timeToCompleteQuestion = 30f;
+    [SerializeField] float timeToCompleteQuestion = 30f;
     [SerializeField] float timeToShowAnswer = 10f;
 
     public bool loadNextQuestion;
@@ -13,10 +13,7 @@ public class Timer : MonoBehaviour
     float timerValue;
     void Update()
     {
-
         updateTimer();
-
-        
     }
 
     public void cancleTimer()
@@ -33,8 +30,6 @@ public class Timer : MonoBehaviour
             if(timerValue>0)
             {
                 fillFraction=timerValue/timeToCompleteQuestion;
-
-
             }
             else 
             {
@@ -50,7 +45,6 @@ public class Timer : MonoBehaviour
                if(timerValue>0)
             {
                 fillFraction=timerValue/timeToShowAnswer;
-
 
             }
             else 

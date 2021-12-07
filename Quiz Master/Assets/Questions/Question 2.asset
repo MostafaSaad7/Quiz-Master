@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question 2
   m_EditorClassIdentifier: 
   question: Where is Salah  playing?
+  answers:
+  - Liver
+  - ss
+  - dd
+  - dasa
+  correctAnswerIndex: 0
